@@ -11,8 +11,6 @@ function App() {
   const [repo, setRepo] = useState<any[]>([]);
   const [search, setSearch] = useState<string>('');
 
-  let name: string = 'padil';
-
   const handleSearch = async () => {
     if (user) {
       setRepo(['']);
