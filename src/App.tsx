@@ -9,6 +9,8 @@ function App() {
   const [detail, setDetail] = useState<string>('');
   const [data, setData] = useState<any[]>([]);
   const [repo, setRepo] = useState<any[]>([]);
+  const [search, setSearch] = useState<string>('');
+
   let name: string = 'padil';
 
   const handleSearch = async () => {
@@ -18,8 +20,10 @@ function App() {
         `https://api.github.com/search/users?q=${user}`,
       );
       setData(result.data.items.slice(0, 5));
+      setSearch(user);
     } else {
       setData(['']);
+      setSearch('');
     }
   };
 
@@ -39,6 +43,7 @@ function App() {
         .catch((error) => console.log(error)),
     );
   }, [data]);
+  console.log(data);
 
   return (
     <div className="bg-neutral-200 min-h-screen py-3">
@@ -56,8 +61,8 @@ function App() {
         >
           Search
         </button>
-        {data[0] != '' && (
-          <span className="text-neutral-400">Showing users for "{user}"</span>
+        {search && (
+          <span className="text-neutral-400">Showing users for "{search}"</span>
         )}
         {data[0] != '' &&
           data?.map((val) => (
