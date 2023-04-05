@@ -1,7 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-// import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
