@@ -46,9 +46,9 @@ function App() {
   console.log(data);
 
   return (
-    <div className="bg-neutral-200 min-h-screen py-3">
+    <div className="bg-neutral-200 min-h-screen py-10">
       {''}
-      <div className="w-96 mx-auto border px-5 py-4 bg-white  ">
+      <div className="w-96 mx-auto border px-5 py-4 bg-white min-h-[34rem] ">
         <input
           onChange={(e) => setUser(e.target.value)}
           className="bg-gray-50 border border-gray-300  text-sm px-2 py-3 text-neutral-500  focus:outline-none w-full"
