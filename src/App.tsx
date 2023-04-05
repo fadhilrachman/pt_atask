@@ -24,7 +24,7 @@ function App() {
   };
 
   const handleDetail = (val: string) => {
-    if (val == detail) {
+    if (val === detail) {
       setDetail('');
     } else {
       setDetail(val);
@@ -60,7 +60,7 @@ function App() {
         {search && (
           <span className="text-neutral-400">Showing users for "{search}"</span>
         )}
-        {data[0] != '' &&
+        {data[0] !== '' &&
           data?.map((val) => (
             <>
               <div
@@ -70,16 +70,16 @@ function App() {
                 <h1>{val.login}</h1>
                 <i
                   className={`bi bi-chevron-down  rotate-180 ${
-                    detail == val.login ? 'rotate-180' : 'rotate-0'
+                    detail === val.login ? 'rotate-180' : 'rotate-0'
                   }`}
                 ></i>
               </div>
-              {repo[1] != '' &&
+              {repo[1] !== '' &&
                 repo.map((valRepo) =>
-                  val.login == valRepo?.owner?.login ? (
+                  val.login === valRepo?.owner?.login ? (
                     <div
                       className={`bg-neutral-300 px-3  my-3 ml-8 py-3 ${
-                        detail == val.login ? 'block' : 'hidden'
+                        detail === val.login ? 'block' : 'hidden'
                       }`}
                     >
                       <div className="flex justify-between">
